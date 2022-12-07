@@ -9,7 +9,7 @@ To use the automate.sh script, run below command <br />
 bash ./automate.sh <tensor_dimension> <layer_id> <power_report_log_file> <cuda_kernel>
 
 tensor_dimension > 0
-layer_id = 0/2
+layer_id = 0/1/2/3
 cuda_kernel = mat_mul/nw
 ```
 
