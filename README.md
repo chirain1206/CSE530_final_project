@@ -11,4 +11,4 @@ cuda_kernel = mat_mul/nw
 
 Generated HotSpot files are in *generated_files/hotspot_outputs/tensor_size_<tensor_dimension>\_<cuda_kernel>\_layer_<layer_id>*
 
-Power traces of cuda kernels under differnt input tensor sizes recorded in *power_logs/power_trace.txt*
+Power traces of cuda kernels on different input tensor sizes recorded in *power_logs/power_trace.txt*
