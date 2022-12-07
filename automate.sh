@@ -16,7 +16,7 @@ if (( $# < 3 )); then
 	echo "Invalid number of parameters"
 	echo "Usage: source ./automate.sh <tensor_dimension> <layer_id> <power_report_log_file> <cuda_kernel>"
 	echo "tensor_dimension > 0"
-	echo "layer_id = 0/2"
+	echo "layer_id = 0/1/2/3"
 	echo "cuda_kernel = mat_mul/nw"
 	return
 fi
@@ -29,9 +29,9 @@ fi
 
 # Only 0 and 2 layer ids are allowed as input since only these layers are
 # silicon layers
-if (( $2 != 0 && $2 != 2 )); then
+if (( $2 != 0 && $2 != 1 && $2 != 2 && $2 != 3)); then
 	echo "Invalid layer id"
-	echo "layer_id = 0/2"
+	echo "layer_id = 0/1/2/3"
 	return
 fi
 
@@ -89,9 +89,15 @@ python3 HotSpot/scripts/split_grid_steady.py generated_files/hotspot_outputs/ste
 if (( $2 == 0 )); then
 	python3 HotSpot/scripts/grid_thermal_map.py fermi_floorplan1.flp generated_files/hotspot_outputs/steady/fermi_layer0.grid.steady 8 8 generated_files/hotspot_outputs/tensor_size_$1_$4_layer_0/layer0.png
 	HotSpot/scripts/grid_thermal_map.pl fermi_floorplan1.flp generated_files/hotspot_outputs/steady/fermi_layer0.grid.steady 8 8 > generated_files/hotspot_outputs/tensor_size_$1_$4_layer_0/layer0.svg
-else
+elif (( $2 == 1 )); then
+	python3 HotSpot/scripts/grid_thermal_map.py fermi_floorplan3.flp generated_files/hotspot_outputs/steady/fermi_layer1.grid.steady 8 8 generated_files/hotspot_outputs/tensor_size_$1_$4_layer_1/layer1.png
+	HotSpot/scripts/grid_thermal_map.pl fermi_floorplan3.flp generated_files/hotspot_outputs/steady/fermi_layer1.grid.steady 8 8 > generated_files/hotspot_outputs/tensor_size_$1_$4_layer_1/layer1.svg
+elif (( $2 == 2 )); then
 	python3 HotSpot/scripts/grid_thermal_map.py fermi_floorplan2.flp generated_files/hotspot_outputs/steady/fermi_layer2.grid.steady 8 8 generated_files/hotspot_outputs/tensor_size_$1_$4_layer_2/layer2.png
 	HotSpot/scripts/grid_thermal_map.pl fermi_floorplan2.flp generated_files/hotspot_outputs/steady/fermi_layer2.grid.steady 8 8 > generated_files/hotspot_outputs/tensor_size_$1_$4_layer_2/layer2.svg
+else
+	python3 HotSpot/scripts/grid_thermal_map.py fermi_floorplan3.flp generated_files/hotspot_outputs/steady/fermi_layer3.grid.steady 8 8 generated_files/hotspot_outputs/tensor_size_$1_$4_layer_3/layer3.png
+	HotSpot/scripts/grid_thermal_map.pl fermi_floorplan3.flp generated_files/hotspot_outputs/steady/fermi_layer3.grid.steady 8 8 > generated_files/hotspot_outputs/tensor_size_$1_$4_layer_3/layer3.svg
 fi
 echo "Heap map image generation done"
 
