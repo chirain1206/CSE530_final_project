@@ -1,5 +1,9 @@
 # CSE530_final_project
 
+Reference:
+*https://www.cs.virginia.edu/rodinia/doku.php*
+*https://github.com/NiramayVaidya/GTX480_Thermal_Analysis*
+
 To use the automate.sh script, run below command <br />
 ```console
 bash ./automate.sh <tensor_dimension> <layer_id> <power_report_log_file> <cuda_kernel>
