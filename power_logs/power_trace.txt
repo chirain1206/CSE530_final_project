@@ -1,0 +1,8 @@
+Accumulative GPU total average power over previous kernels on different input tensor sizes:
+mat_mul_100: 100.178
+mat_mul_200: 69.2899
+nw_128: 29.2553
+nw_192: 26.6361
+nw_256: 24.0469
+nw_320: 22.9839
+nw_384: 21.9891
