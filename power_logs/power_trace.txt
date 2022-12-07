@@ -2,6 +2,7 @@ Accumulative GPU total average power over previous kernels on different input te
 mat_mul_50: 51.4019
 mat_mul_100: 100.178
 mat_mul_200: 69.2899
+mat_mul_300: 67.592
 nw_128: 29.2553
 nw_192: 26.6361
 nw_256: 24.0469
