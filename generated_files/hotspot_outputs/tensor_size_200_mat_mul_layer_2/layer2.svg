@@ -4,7 +4,7 @@
     viewBox="0 0 27600 23000">
 <title>Sample Temperature Map For HotSpot Grid Model</title>
 <g id="floorplan" style="stroke: none; fill: red;">
-	<rect x="0" y="0" width="2875" height="2875" style="fill:rgb(0,0,255)" />
+	<rect x="0" y="0" width="2875" height="2875" style="fill:rgb(0,51,255)" />
 	<rect x="2875" y="0" width="2875" height="2875" style="fill:rgb(0,51,255)" />
 	<rect x="5750" y="0" width="2875" height="2875" style="fill:rgb(0,102,255)" />
 	<rect x="8625" y="0" width="2875" height="2875" style="fill:rgb(0,102,255)" />
